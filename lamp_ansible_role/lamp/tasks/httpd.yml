@@ -1,0 +1,13 @@
+---
+- name: install apache(httpd)
+  yum:
+    name: httpd
+    state: latest
+- name: start apache
+  service:
+    name: httpd
+    state: started
+- name: copy index.html file
+  copy:
+    src: index.html
+    dest: /var/www/html/ 
